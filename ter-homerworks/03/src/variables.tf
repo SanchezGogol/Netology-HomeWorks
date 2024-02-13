@@ -75,6 +75,10 @@ variable "platform_id_v" {
 }
 
 ##### Диски яндекс
+variable "disc_count" {
+  type = number
+  default = 2
+}
 
 variable "disk_size" {
   type = number
