@@ -102,3 +102,6 @@
 
 Terraform plan:
 ![Alt text](https://github.com/SanchezGogol/Netology-HomeWorks/blob/main/ter-homerworks/02/images/image-27.png?raw=true)
+
+
+ВСЁ!
