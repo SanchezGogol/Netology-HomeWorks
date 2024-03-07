@@ -31,7 +31,7 @@ name = "db-${each.key}"
     resources {
        cores         = each.value.cpu
        memory        = each.value.ram
-       core_fraction = var.vms_resources.web.core_fraction #поправь на другую переменную
+       core_fraction = var.vms_resources.web.core_fraction 
   }
     boot_disk {
     initialize_params {
@@ -40,8 +40,8 @@ name = "db-${each.key}"
     }
   }
     metadata = {
-       ssh-keys = local.ssh_key_file
-       #"ubuntu:${var.vms_ssh_root_key}"
+        sensitive = true       
+        ssh-keys = local.ssh_key_file
   }
     network_interface {
     subnet_id = yandex_vpc_subnet.develop.id
@@ -49,3 +49,4 @@ name = "db-${each.key}"
     security_group_ids = [yandex_vpc_security_group.example.id]
   }
 }
+

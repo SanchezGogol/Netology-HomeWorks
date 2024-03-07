@@ -47,11 +47,6 @@ variable "net-cidr" {
   type = string
   default = "['10.0.1.0/24']"
 }
-#  variable "vms_ssh_root_key" {
-#    type = string
-#    sensitive = true
-#    default = file("~/.ssh/sanchez.pub")
-#  }
 
 variable "vms_resources" {
   type = map(object({
@@ -75,10 +70,6 @@ variable "platform_id_v" {
 }
 
 ##### Диски яндекс
-variable "disc_count" {
-  type = number
-  default = 2
-}
 
 variable "disk_size" {
   type = number
@@ -88,4 +79,9 @@ variable "disk_size" {
 variable "hdd-type" {
   type = string
   default = "network-hdd"
+}
+
+variable "disc_count" {
+  type = number
+  default = 3
 }

@@ -1,12 +1,12 @@
-[webservers]
-%{ for instance in webservers ~}
-${instance.name}   ansible_host=${instance.nat_ip_address}
-%{ endfor ~}
+[webservers] # тут обратимся к блоку, из которого нужно взять данные
+%{ for instance in webservers ~} # задаём цикл, который проходится по нашему инстансу и собирает информацию о ВМ
+${instance.name}   ansible_host=${instance.nat_ip_address} fqdn=${instance.fqdn}# указываем, какие данные мы должны получить из инстанса
+%{ endfor ~} # заканчиваем цикл
 [databases]
 %{ for instance in databases ~}
-${instance.name}   ansible_host=${instance.nat_ip_address}
+${instance.name}   ansible_host=${instance.nat_ip_address} fqdn=${instance.fqdn}
 %{ endfor ~}
 [storage]
 %{ for instance in storage ~}
-${instance.name}   ansible_host=${instance.nat_ip_address}
+${instance.name}   ansible_host=${instance.nat_ip_address} fqdn=${instance.fqdn}
 %{ endfor ~}
